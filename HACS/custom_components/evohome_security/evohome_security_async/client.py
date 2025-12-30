@@ -4,11 +4,11 @@ from __future__ import annotations
 
 import asyncio
 import base64
+from http.cookies import SimpleCookie
 import logging
+from pathlib import Path
 import re
 import time
-from http.cookies import SimpleCookie
-from pathlib import Path
 from typing import Any, Self
 
 import aiohttp
@@ -384,7 +384,7 @@ class EvohomeSecurityClient:
             msg = f"Failed to get status: {err}"
             raise ApiError(msg) from err
 
-    def _parse_status_response(self, data: dict[str, Any]) -> ArmStatus:  # noqa: PLR0911
+    def _parse_status_response(self, data: dict[str, Any]) -> ArmStatus:
         if "statusCode" in data:
             status_code = data["statusCode"]
             if status_code == DISARMED_CODE:
@@ -516,7 +516,7 @@ class EvohomeSecurityClient:
                 self._home_session_id = None
                 return False
 
-        except Exception:  # noqa: BLE001
+        except Exception:
             _LOGGER.exception("Logout error")
             self._is_authenticated = False
             self._home_session_id = None
