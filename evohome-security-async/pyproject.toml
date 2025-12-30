@@ -1,0 +1,79 @@
+[build-system]
+requires = ["setuptools>=45", "wheel", "setuptools_scm[toml]>=6.2"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "evohome-security-async"
+version = "1.0.0"
+description = "Async Python library for controlling Honeywell Evohome Security (Total Connect) systems"
+readme = "README.md"
+authors = [
+    {name = "Martin Smitek", email = "martin@smitek.co.uk"}
+]
+license = {text = "MIT"}
+keywords = [
+    "honeywell",
+    "evohome",
+    "security",
+    "alarm",
+    "total-connect",
+    "async",
+    "aiohttp"
+]
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Intended Audience :: Developers",
+    "License :: OSI Approved :: MIT License",
+    "Natural Language :: English",
+    "Operating System :: OS Independent",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Programming Language :: Python :: 3.13",
+    "Topic :: Home Automation",
+    "Topic :: Software Development :: Libraries :: Python Modules",
+]
+requires-python = ">=3.11"
+dependencies = [
+    "aiohttp>=3.8.0",
+    "yarl>=1.8.0",
+]
+
+[project.optional-dependencies]
+test = [
+    "pytest>=7.0.0",
+    "pytest-asyncio>=0.21.0",
+    "aioresponses>=0.7.3",
+]
+dev = [
+    "black>=23.0.0",
+    "isort>=5.12.0",
+    "pylint>=2.17.0",
+    "mypy>=1.0.0",
+    "pytest>=7.0.0",
+    "pytest-asyncio>=0.21.0",
+    "aioresponses>=0.7.3",
+]
+
+[project.urls]
+Homepage = "https://github.com/martinsmit/evohome-security-async"
+Documentation = "https://github.com/martinsmit/evohome-security-async/tree/main/docs"
+Repository = "https://github.com/martinsmit/evohome-security-async.git"
+"Bug Tracker" = "https://github.com/martinsmit/evohome-security-async/issues"
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["evohome_security_async*"]
+
+[tool.ruff]
+line-length = 88
+target-version = "py311"
+
+[tool.ruff.lint]
+select = ["E", "F", "W", "I", "UP", "B", "A", "C4", "DTZ", "T10", "EM", "ISC", "ICN", "G", "PIE", "PYI", "Q", "RSE", "RET", "SIM", "TID", "TCH", "ARG", "PTH", "PD", "PGH", "PL", "TRY", "NPY", "RUF"]
+
+[tool.mypy]
+python_version = "3.11"
+strict = true
+warn_return_any = true
+warn_unused_configs = true
