@@ -1,0 +1,12 @@
+{
+  "domain": "evohome_security",
+  "name": "Honeywell Evohome Security",
+  "version": "0.1.0",
+  "documentation": "https://github.com/home-assistant/core/tree/dev/HACS",
+  "issue_tracker": "https://github.com/home-assistant/core/issues",
+  "codeowners": ["@zxdavb"],
+  "config_flow": true,
+  "integration_type": "device",
+  "iot_class": "cloud_polling",
+  "requirements": []
+}

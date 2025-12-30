@@ -1,0 +1,32 @@
+{
+  "config": {
+    "abort": {
+      "already_configured": "Account is already configured"
+    },
+    "error": {
+      "invalid_auth": "Invalid username or password",
+      "unknown": "Unexpected error occurred"
+    },
+    "step": {
+      "user": {
+        "data": {
+          "base_url": "Base URL",
+          "password": "Password",
+          "username": "Email address"
+        },
+        "data_description": {
+          "base_url": "Leave as default unless using a different region"
+        },
+        "description": "Enter your Total Connect credentials",
+        "title": "Connect to Honeywell Evohome Security"
+      }
+    }
+  },
+  "entity": {
+    "alarm_control_panel": {
+      "evohome_security": {
+        "name": "Alarm"
+      }
+    }
+  }
+}

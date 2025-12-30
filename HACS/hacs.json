@@ -1,0 +1,5 @@
+{
+  "name": "Honeywell Evohome Security",
+  "domains": ["evohome_security"],
+  "render_readme": true
+}
